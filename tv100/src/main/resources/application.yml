@@ -1,0 +1,11 @@
+server:
+ port: 0 #Random port
+
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: http://172.16.16.82:8761/eureka/
+
+spring:
+  application:
+    name: tv100

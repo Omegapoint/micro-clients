@@ -1,1 +1,1 @@
-# micro-clients
+# Micro Service Workshop. Cool Stuff.

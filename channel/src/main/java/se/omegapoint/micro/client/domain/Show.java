@@ -1,4 +1,4 @@
-package se.omegapoint.micro.client;
+package se.omegapoint.micro.client.domain;
 
 public class Show {
 

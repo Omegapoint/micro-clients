@@ -21,7 +21,7 @@ Channel info används för att returnera information kanalen. Uppgiften går hel
 * Lägg till gruppdeltagarnas namn i channelInfo. 
  (Tips: kolla i InfoController.java)
 * Ändra Kanalnamnet (både i InfoController.java och i application.yml)
-* Starta om...
+* Starta om!
 
 -> Öppna http://localhost:#PORT#/channelInfo i webläsaren
 
@@ -35,20 +35,23 @@ För din mikrotjänst ska kunna upptäckas av servern måste den registrera sig 
 * Ändra ip-addressen i application.yml (specificerar vad SD-servern hittas)
 * Ändra eureka client enabled till true i application.yml (berättar för applikationen att den är en mikrotjänst)
 * Ändra spring application name till ert gruppnamn (tv###) i application.yml (berättar vilken typ av mikrotjänst som registreras)
-* Starta om...
+* Starta om!
 * Syns din tv-kanal på projektorn?
 
 ## Uppgift 3: Returnera dina tv-program
-* Börja med att kolla i ShowController.java. Försök hitta vilket Repotirory som används för att hämta information om tv-program.
-* När du hittat rätt klass (obs, det finns hjälpkommentarer i koden) lägger du till några tv-program och returnerar dessa. T.ex i en passande ArrayList.
+
+Nu är din mikrotjänst registrerad den kan börja returnera någon vettig data. Den här uppgiften går ut på att modifiera java-koden till att returnera information om de tv-program som sänds på kanalen. Genom att öppna http://localhost:#PORT#/shows i webläsaren ser ni vilka program som returneras (Obs, innan ni gjort klart uppgiften returneras ett error-meddelande). 
+
+* Börja med att kolla i ShowController.java. Försök hitta vilket Repository som används för att hämta information om tv-program.
+* När du hittat rätt klass (obs, det finns hjälpkommentarer i koden) lägger du till några tv-program och returnerar dessa. T.ex i en passande ArrayList (detailedShowList). 
 * Tips: kolla in funktionen detailedShowToShow för att konvertera från DetailedShow till Show-objekt
-* Starta om...
+* Starta om!
 * Syns dina program på projektorn?
 
 ## Uppgift 4: Returnera infornation om ett enskilt tv-program
 * Implementera så att /showDetails?id=<ID> returnerar detaljerad information om ett tv-program med id = <ID>.
 * Fråga om hjälp om ni fastnar. 
-* Starta om...
+* Starta om!
 * Testa genom att klicka på ett program. 
 
 ## (BONUS!) Uppgift 5: Skapa endpoint för att lägga till tv-program

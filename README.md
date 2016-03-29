@@ -49,6 +49,9 @@ Nu är din mikrotjänst registrerad den kan börja returnera någon vettig data.
 * Syns dina program på projektorn?
 
 ## Uppgift 4: Returnera infornation om ett enskilt tv-program
+
+När man klickar på ett program i listan skall detaljerad information om programmet visas. För att det ska fungera behövs ny funktionalitet implementeras:
+
 * Implementera så att /showDetails?id=<ID> returnerar detaljerad information om ett tv-program med id = <ID>.
 * Fråga om hjälp om ni fastnar. 
 * Starta om!

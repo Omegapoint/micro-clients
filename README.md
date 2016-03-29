@@ -15,18 +15,26 @@ mvn clean && mvn package && java -Dserver.port=<PORT> -jar target/channel-0.0.1-
 -> Öppna http://localhost:#PORT#/channelInfo i webläsaren
 
 ## Uppgit 1: Ändra channelInfo
+
+Channel info används för att returnera information kanalen. Uppgiften går helt enkelt ut på att modifiera infomationen till er egen. 
+
 * Lägg till gruppdeltagarnas namn i channelInfo. 
  (Tips: kolla i InfoController.java)
 * Ändra Kanalnamnet (både i InfoController.java och i application.yml)
 * Starta om...
 
+-> Öppna http://localhost:#PORT#/channelInfo i webläsaren
+
 Kolla resultatet i http://localhost:#PORT#/channelInfo
 
 ## Uppgift 2: Registrera din micro service
-* Lägg till @EnableEurekaClient i ChannelApplication.java
-* Ändra ip-address i application.yml (i resource-mappen)
-* Ändra eureka client enabled till true i application.yml
-* Ändra spring applicatio name till gruppnamnet (tv...) i application.yml
+
+För din mikrotjänst ska kunna upptäckas av servern måste den registrera sig hos service discovery-tjänsten. Service discovery (SD) är en term som används inom micro service-världen, och det går ut på att klienterna vid uppstart registrerar vilken typ av applikation den är och vad den har för ip-address hos en SD-server. På så vis kan mikrotjänsterna hitta varandra genom att fråga SD-servern var den kan hitta en viss typ av tjänst.
+
+* Lägg till @EnableEurekaClient i ChannelApplication.java. Detta är en annotation som genom SpringBoot-magi kommmer att registrera er mikrotjänst hos SD-servern. För att det ska fungera behövs två saker, ip-addressen till SD-servern samt information om vilken typ av tjänst som registreras. Här används ert kanalnamn för detta. 
+* Ändra ip-addressen i application.yml (specificerar vad SD-servern hittas)
+* Ändra eureka client enabled till true i application.yml (berättar för applikationen att den är en mikrotjänst)
+* Ändra spring application name till ert gruppnamn (tv###) i application.yml (berättar vilken typ av mikrotjänst som registreras)
 * Starta om...
 * Syns din tv-kanal på projektorn?
 

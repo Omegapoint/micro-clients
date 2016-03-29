@@ -17,7 +17,7 @@ mvn clean && mvn package && java -Dserver.port=<PORT> -jar target/channel-0.0.1-
 ## Uppgit 1: Ändra channelInfo
 * Lägg till gruppdeltagarnas namn i channelInfo. 
  (Tips: kolla i InfoController.java)
-* Ändra Kanalnamnet
+* Ändra Kanalnamnet (både i InfoController.java och i application.yml)
 * Starta om...
 
 Kolla resultatet i http://localhost:#PORT#/channelInfo

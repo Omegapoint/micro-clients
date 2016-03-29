@@ -14,7 +14,7 @@ mvn clean && mvn package && java -Dserver.port=<PORT> -jar target/channel-0.0.1-
 
 -> Öppna http://localhost:#PORT#/channelInfo i webläsaren
 
-## Uppgit 1: Ändra channelInfo
+## Uppgit 1: Ändra kanalinformation
 
 Channel info används för att returnera information kanalen. Uppgiften går helt enkelt ut på att modifiera infomationen till er egen. 
 

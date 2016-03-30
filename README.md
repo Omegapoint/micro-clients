@@ -52,7 +52,7 @@ Nu är din mikrotjänst registrerad den kan börja returnera någon vettig data.
 
 När man klickar på ett program i listan skall detaljerad information om programmet visas. För att det ska fungera behövs ny funktionalitet implementeras:
 
-* Implementera så att /showDetails?id=<ID> returnerar detaljerad information om ett tv-program med id = <ID>.
+* Implementera så att /showDetails?id=#ID# returnerar detaljerad information om ett tv-program med id = #ID#.
 * Fråga om hjälp om ni fastnar. 
 * Starta om!
 * Testa genom att klicka på ett program. 

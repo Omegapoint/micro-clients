@@ -8,11 +8,11 @@ git clone https://github.com/Omegapoint/micro-clients.git
 cd micro-clients
 ```
 ```sh
-mvn clean && mvn package && java -Dserver.port=<PORT> -jar target/channel-0.0.1-SNAPSHOT.jar
+mvn clean && mvn package && java -Dserver.port=8080 -jar target/channel-0.0.1-SNAPSHOT.jar
 (Kom ihåg att ändra port)
 ```
 
--> Öppna http://localhost:#PORT#/channelInfo i webläsaren
+-> Öppna http://localhost:8080/channelInfo i webläsaren
 
 ## Uppgit 1: Ändra kanalinformation
 
@@ -23,9 +23,9 @@ Channel info används för att returnera information kanalen. Uppgiften går hel
 * Ändra Kanalnamnet (både i InfoController.java och i application.yml)
 * Starta om!
 
--> Öppna http://localhost:#PORT#/channelInfo i webläsaren
+-> Öppna http://localhost:8080/channelInfo i webläsaren
 
-Kolla resultatet i http://localhost:#PORT#/channelInfo
+Kolla resultatet i http://localhost:8080/channelInfo
 
 ## Uppgift 2: Registrera din micro service
 
@@ -40,7 +40,7 @@ För din mikrotjänst ska kunna upptäckas av servern måste den registrera sig 
 
 ## Uppgift 3: Returnera dina tv-program
 
-Nu är din mikrotjänst registrerad den kan börja returnera någon vettig data. Den här uppgiften går ut på att modifiera java-koden till att returnera information om de tv-program som sänds på kanalen. Genom att öppna http://localhost:#PORT#/shows i webläsaren ser ni vilka program som returneras (Obs, innan ni gjort klart uppgiften returneras ett error-meddelande). 
+Nu är din mikrotjänst registrerad den kan börja returnera någon vettig data. Den här uppgiften går ut på att modifiera java-koden till att returnera information om de tv-program som sänds på kanalen. Genom att öppna http://localhost8080/shows i webläsaren ser ni vilka program som returneras (Obs, innan ni gjort klart uppgiften returneras ett error-meddelande). 
 
 * Börja med att kolla i ShowController.java. Försök hitta vilket Repository som används för att hämta information om tv-program.
 * När du hittat rätt klass (obs, det finns hjälpkommentarer i koden) lägger du till några tv-program och returnerar dessa. T.ex i en passande ArrayList (detailedShowList). 

@@ -1,4 +1,4 @@
-package se.omegapoint.micro.client.controller;
+package se.omegapoint.micro.client.controller.ping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

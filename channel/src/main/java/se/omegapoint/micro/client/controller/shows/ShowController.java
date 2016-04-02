@@ -1,4 +1,4 @@
-package se.omegapoint.micro.client.controller;
+package se.omegapoint.micro.client.controller.shows;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

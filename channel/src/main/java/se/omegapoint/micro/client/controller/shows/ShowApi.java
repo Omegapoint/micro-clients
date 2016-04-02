@@ -1,8 +1,8 @@
-package se.omegapoint.micro.client.controller;
-
-import java.time.LocalDateTime;
+package se.omegapoint.micro.client.controller.shows;
 
 /**
+ * ShowApi is used for not exposing the internal Show object to users (clients).
+ *
  * Created by PNTSCOMP on 2016-04-02.
  */
 public class ShowApi {

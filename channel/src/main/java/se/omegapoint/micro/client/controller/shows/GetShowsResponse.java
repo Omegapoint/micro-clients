@@ -1,4 +1,4 @@
-package se.omegapoint.micro.client.controller;
+package se.omegapoint.micro.client.controller.shows;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import se.omegapoint.micro.client.domain.Show;

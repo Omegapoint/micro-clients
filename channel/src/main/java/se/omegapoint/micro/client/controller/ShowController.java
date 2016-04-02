@@ -32,8 +32,9 @@ public class ShowController {
     }
 
     @RequestMapping(value = "/show", produces = MediaType.APPLICATION_JSON_VALUE)
-    public DetailedShow showDetails(@RequestParam("id") int id) {
-        return showService.getShow(id);
+    public GetDetailedShowResponse showDetails(@RequestParam("id") int id) {
+        DetailedShow detailedShow = showService.getShow(id);
+        return GetDetailedShowResponse.from(detailedShow);
     }
 
 }

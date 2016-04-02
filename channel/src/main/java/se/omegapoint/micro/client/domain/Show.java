@@ -1,24 +1,17 @@
 package se.omegapoint.micro.client.domain;
 
+import java.time.LocalDateTime;
+
 public class Show {
 
-    private final int id;
-    private final String title;
-    private final String startTime;
+    public final int id;
+    public final String title;
+    public final LocalDateTime startTime;
 
-    public Show(int id, String title, String startTime) {
+    public Show(int id, String title, LocalDateTime startTime) {
         this.id = id;
         this.title = title;
         this.startTime = startTime;
     }
 
-    public int getId() {
-        return id;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public String getStartTime() {
-        return startTime;
-    }
 }

@@ -9,6 +9,6 @@ public interface ShowRepository {
 
     List<Show> getShows();
 
-    DetailedShow getShow(int id);
+    List<DetailedShow> getDetailedShows();
 
 }

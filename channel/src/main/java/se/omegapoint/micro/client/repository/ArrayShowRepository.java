@@ -1,17 +1,32 @@
 package se.omegapoint.micro.client.repository;
 
-import org.apache.commons.lang.NotImplementedException;
+import org.springframework.data.convert.JodaTimeConverters;
 import org.springframework.stereotype.Repository;
 import se.omegapoint.micro.client.domain.DetailedShow;
 import se.omegapoint.micro.client.domain.Show;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class ArrayShowRepository implements ShowRepository{
 
-    List<DetailedShow> detailedShowList = new ArrayList<>();
+    private List<DetailedShow> detailedShowList;
+
+    public ArrayShowRepository() {
+        this.detailedShowList = new ArrayList<>();
+        detailedShowList.add(DetailedShow.newBuilder()
+                .description("This is a cool program. Watch it!")
+                .genre("Sport")
+                .id(1)
+                .startTime(LocalDateTime.now())
+                .title("Sport program")
+                .year(2006)
+                .build());
+    }
 
     /**
      *  TODO: Uppfigt 3.
@@ -19,29 +34,31 @@ public class ArrayShowRepository implements ShowRepository{
     @Override
     public List<Show> getShows() {
 
-        //Tips: kolla på detailedShowToShow().
-        throw new NotImplementedException("IMPLEMENT ME, PLEASE!");
+        return listOfdetailedShowToShowList(detailedShowList);
+
+        //Tips: kolla på listOfdetailedShowToShowList().
+        //throw new NotImplementedException("IMPLEMENT ME, PLEASE!");
     }
 
     /**
-     * TODO: Uppgift 4.
      *
-     * @param id of the show to return
-     * @return DetailedShow
+     * @return List of Detailed Shows
      */
-    @Override
-    public DetailedShow getShow(int id) {
-        throw new NotImplementedException("IMPLEMENT ME, POR FAVOR!");
+    public List<DetailedShow> getDetailedShows(){
+        return detailedShowList;
     }
 
     /**
      * Help function for converting DetailedShow to Show
      *
-     * @param detailedShow DetailedShow object
-     * @return show Show object
+     * @param listOfdetailedShow List of DetailedShow object
+     * @return List of Show object
      */
-    private Show detailedShowToShow(DetailedShow detailedShow) {
-        return new Show(detailedShow.id, detailedShow.title, detailedShow.startTime);
+    private List<Show> listOfdetailedShowToShowList(List<DetailedShow> listOfdetailedShow) {
+        return listOfdetailedShow
+                .stream()
+                .map(detailedShow -> new Show(detailedShow.id, detailedShow.title, detailedShow.startTime))
+                .collect(Collectors.toList());
     }
 
 }

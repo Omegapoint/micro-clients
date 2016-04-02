@@ -1,6 +1,5 @@
 package se.omegapoint.micro.client.controller;
 
-import org.apache.commons.lang.NotImplementedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,14 +25,15 @@ public class ShowController {
      * @return List of Show objects.
      */
     @RequestMapping(value = "/shows", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Show> shows() {
+    public GetShowsResponse shows() {
         List<Show> shows = showService.getShows();
-        return shows;
+        GetShowsResponse showsResponse = GetShowsResponse.from(shows);
+        return showsResponse;
     }
 
     @RequestMapping(value = "/show", produces = MediaType.APPLICATION_JSON_VALUE)
     public DetailedShow showDetails(@RequestParam("id") int id) {
-        throw new NotImplementedException("IMPLEMENT MEEEEE!");
+        return showService.getShow(id);
     }
 
 }

@@ -24,13 +24,20 @@ public class ShowService {
         return shows;
     }
 
+    /**
+     * TODO: Uppgift 4.
+     * TODO: Hämta DetailedShow från showRepository. (Sök efter id)
+     */
     public DetailedShow getShow(int id) {
+
+        List<DetailedShow> listOfShows = showRepository.getDetailedShows();
+        return listOfShows.stream().filter(show -> show.id == id).findFirst().get();
 
         /**
          * Uppgift 4.
          *
-         * Hämta DetailedShow från showRepository. (Sök efter id)
+         *
          */
-        throw new NotImplementedException("IMPLEMENT ME, HARD.");
+        //throw new NotImplementedException("IMPLEMENT ME, HARD.");
     }
 }

@@ -1,5 +1,7 @@
 package se.omegapoint.micro.client.domain;
 
+import java.time.LocalDateTime;
+
 /**
  * Created by PNTSCOMP on 2016-03-21.
  */
@@ -7,14 +9,11 @@ public class DetailedShow {
 
     public final int id;
     public final String title;
-    public final String startTime;
+    public final LocalDateTime startTime;
     public final String description;
     public final String genre;
     public final int year;
 
-    public static Builder newBuilder() {
-        return new Builder();
-    }
 
     /**
      * Builder Pattern
@@ -28,10 +27,14 @@ public class DetailedShow {
         year = builder.year;
     }
 
+    public static Builder newBuilder() {
+        return new Builder();
+    }
+
     public static final class Builder {
         private int id;
         private String title;
-        private String startTime;
+        private LocalDateTime startTime;
         private String description;
         private String genre;
         private int year;
@@ -49,7 +52,7 @@ public class DetailedShow {
             return this;
         }
 
-        public Builder startTime(String val) {
+        public Builder startTime(LocalDateTime val) {
             startTime = val;
             return this;
         }
@@ -73,4 +76,9 @@ public class DetailedShow {
             return new DetailedShow(this);
         }
     }
+
+    /**
+     * Builder Pattern
+     */
+
 }

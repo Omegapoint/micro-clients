@@ -9,7 +9,6 @@ cd micro-clients
 ```
 ```sh
 mvn clean && mvn package && java -Dserver.port=8080 -jar target/channel-0.0.1-SNAPSHOT.jar
-(Kom ihåg att ändra port)
 ```
 
 -> Öppna http://localhost:8080/channelInfo i webläsaren

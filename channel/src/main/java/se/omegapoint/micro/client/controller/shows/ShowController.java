@@ -31,6 +31,9 @@ public class ShowController {
         return showsResponse;
     }
 
+    /**
+     * TODO: Uppift 4.
+     */
     @RequestMapping(value = "/show", produces = MediaType.APPLICATION_JSON_VALUE)
     public GetDetailedShowResponse showDetails(@RequestParam("id") int id) {
         DetailedShow detailedShow = showService.getShow(id);

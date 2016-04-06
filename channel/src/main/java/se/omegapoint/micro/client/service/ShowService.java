@@ -1,5 +1,6 @@
 package se.omegapoint.micro.client.service;
 
+import org.apache.commons.lang.NotImplementedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.omegapoint.micro.client.domain.DetailedShow;
@@ -19,8 +20,7 @@ public class ShowService {
     }
 
     public List<Show> getShows() {
-        List<Show> shows = showRepository.getShows();
-        return shows;
+        throw new NotImplementedException("IMPLEMENT ME. Plzz.");
     }
 
     /**
@@ -28,15 +28,7 @@ public class ShowService {
      * TODO: Hämta DetailedShow från showRepository. (Sök efter id)
      */
     public DetailedShow getShow(int id) {
-
         List<DetailedShow> listOfShows = showRepository.getDetailedShows();
-        return listOfShows.stream().filter(show -> show.id == id).findFirst().get();
-
-        /**
-         * Uppgift 4.
-         *
-         *
-         */
-        //throw new NotImplementedException("IMPLEMENT ME, HARD.");
+        throw new NotImplementedException("IMPLEMENT ME.");
     }
 }

@@ -11,7 +11,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * TODO: Uppgift 2 - Genom en annotering kan man säga åt Spring Boot att den ska registrera sig som en mikrotjänst.
  * TODO: Obs, detta kräver även ändringar i applikationens konfigureringar.
  */
-@EnableEurekaClient
 @SpringBootApplication
 public class ChannelApplication {
 

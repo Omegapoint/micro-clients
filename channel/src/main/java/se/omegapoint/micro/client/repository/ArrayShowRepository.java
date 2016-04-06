@@ -1,5 +1,6 @@
 package se.omegapoint.micro.client.repository;
 
+import org.apache.commons.lang.NotImplementedException;
 import org.springframework.stereotype.Repository;
 import se.omegapoint.micro.client.domain.DetailedShow;
 import se.omegapoint.micro.client.domain.Show;
@@ -12,30 +13,23 @@ import java.util.stream.Collectors;
 @Repository
 public class ArrayShowRepository implements ShowRepository{
 
+    /**
+     * The detailedShowList acts as data storage instead of a database.
+     * Add information about your shows here.
+     */
     private List<DetailedShow> detailedShowList;
 
     public ArrayShowRepository() {
         this.detailedShowList = new ArrayList<>();
-        detailedShowList.add(DetailedShow.newBuilder()
-                .description("This is a cool program. Watch it!")
-                .genre("Sport")
-                .id(1)
-                .startTime(LocalDateTime.now())
-                .title("Sport program")
-                .year(2006)
-                .build());
     }
 
     /**
-     *  TODO: Uppfigt 3.
+     *  TODO: Uppgift 3.
      */
     @Override
     public List<Show> getShows() {
-
-        return listOfdetailedShowToShowList(detailedShowList);
-
         //Tips: kolla på listOfdetailedShowToShowList().
-        //throw new NotImplementedException("IMPLEMENT ME, PLEASE!");
+        throw new NotImplementedException("IMPLEMENT ME, PLEASE!");
     }
 
     /**
@@ -49,11 +43,11 @@ public class ArrayShowRepository implements ShowRepository{
     /**
      * Help function for converting DetailedShow to Show
      *
-     * @param listOfdetailedShow List of DetailedShow object
+     * @param listOfDetailedShow List of DetailedShow object
      * @return List of Show object
      */
-    private List<Show> listOfdetailedShowToShowList(List<DetailedShow> listOfdetailedShow) {
-        return listOfdetailedShow
+    private List<Show> listOfdetailedShowToShowList(List<DetailedShow> listOfDetailedShow) {
+        return listOfDetailedShow
                 .stream()
                 .map(detailedShow -> new Show(detailedShow.id, detailedShow.title, detailedShow.startTime))
                 .collect(Collectors.toList());

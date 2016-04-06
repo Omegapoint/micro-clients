@@ -1,6 +1,5 @@
 package se.omegapoint.micro.client.service;
 
-import org.apache.commons.lang.NotImplementedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.omegapoint.micro.client.domain.DetailedShow;

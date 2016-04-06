@@ -5,9 +5,6 @@ import se.omegapoint.micro.client.domain.DetailedShow;
 
 import java.time.format.DateTimeFormatter;
 
-/**
- * Created by PNTSCOMP on 2016-04-02.
- */
 public class GetDetailedShowResponse {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");

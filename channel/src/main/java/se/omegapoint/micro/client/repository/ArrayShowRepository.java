@@ -1,12 +1,10 @@
 package se.omegapoint.micro.client.repository;
 
-import org.springframework.data.convert.JodaTimeConverters;
 import org.springframework.stereotype.Repository;
 import se.omegapoint.micro.client.domain.DetailedShow;
 import se.omegapoint.micro.client.domain.Show;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

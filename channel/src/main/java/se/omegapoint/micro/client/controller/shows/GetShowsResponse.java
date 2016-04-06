@@ -8,13 +8,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Used to
  *
  * Created by PNTSCOMP on 2016-04-02.
  */
 public class GetShowsResponse {
 
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE;
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
 
     @JsonProperty("shows")
     public final List<ShowApi> showApiList;

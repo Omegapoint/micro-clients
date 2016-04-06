@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class GetDetailedShowResponse {
 
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE;
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
     @JsonProperty("show")
     public final DetailedShowApi detailedShow;
 

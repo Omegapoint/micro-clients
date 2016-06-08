@@ -15,24 +15,16 @@ import java.util.List;
 @RestController
 public class InfoController {
 
-    public static final String CHANNEL_NAME = "NEW_CHANNEL";
+    public static final String CHANNEL_NAME = "Fancy TV";
     private final ChannelInfo channelInfo;
 
     //Set up information about the channel
     public InfoController() {
         List<Author> channelAuthors = new ArrayList<>();
-        channelAuthors.add(new Author("Batman"));
-        channelAuthors.add(new Author("Robin"));
+        channelAuthors.add(new Author("Hulken"));
         this.channelInfo = new ChannelInfo(CHANNEL_NAME, channelAuthors);
     }
 
-    /**
-     * Endpoint for returning channel information.
-     *
-     * @return ChannelInfo object as json
-     *
-     * TODO: Uppgift 1 - Returnera information om er kanal. (Glöm inte att även ändra i application.yml)
-     */
     @RequestMapping(value = "/channelInfo", produces = MediaType.APPLICATION_JSON_VALUE)
     public ChannelInfo channelInfo(){
         return this.channelInfo;

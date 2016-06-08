@@ -18,8 +18,6 @@ public class ShowController {
     private ShowService showService;
 
     /**
-     TODO: Uppgift 3 - Hitta vilket repository som används för att hämta tv-program och lägg till era program där.
-
      * This endpoint returns information about the currently running shows.
      *
      * @return List of Show objects.
@@ -27,17 +25,12 @@ public class ShowController {
     @RequestMapping(value = "/shows", produces = MediaType.APPLICATION_JSON_VALUE)
     public GetShowsResponse shows() {
         List<Show> shows = showService.getShows();
-        GetShowsResponse showsResponse = GetShowsResponse.from(shows);
-        return showsResponse;
+        return GetShowsResponse.from(shows);
     }
 
-    /**
-     * TODO: Uppift 4.
-     */
     @RequestMapping(value = "/show", produces = MediaType.APPLICATION_JSON_VALUE)
     public GetDetailedShowResponse showDetails(@RequestParam("id") int id) {
         DetailedShow detailedShow = showService.getShow(id);
         return GetDetailedShowResponse.from(detailedShow);
     }
-
 }

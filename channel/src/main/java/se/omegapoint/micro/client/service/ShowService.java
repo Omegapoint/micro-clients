@@ -20,15 +20,15 @@ public class ShowService {
     }
 
     public List<Show> getShows() {
-        throw new NotImplementedException("IMPLEMENT ME. Plzz.");
+        return this.showRepository.getShows();
     }
 
-    /**
-     * TODO: Uppgift 4.
-     * TODO: Hämta DetailedShow från showRepository. (Sök efter id)
-     */
-    public DetailedShow getShow(int id) {
+    public DetailedShow getShow(final Integer id) {
         List<DetailedShow> listOfShows = showRepository.getDetailedShows();
-        throw new NotImplementedException("IMPLEMENT ME.");
+        return listOfShows.stream().filter(s -> id == s.id)
+                .reduce((a, b) -> {
+                    throw new IllegalStateException("Multiple matching IDs");
+                })
+                .orElseThrow(() -> new IllegalArgumentException("No matching show for id " + id));
     }
 }

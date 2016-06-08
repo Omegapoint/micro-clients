@@ -1,6 +1,5 @@
 package se.omegapoint.micro.client.repository;
 
-import org.apache.commons.lang.NotImplementedException;
 import org.springframework.stereotype.Repository;
 import se.omegapoint.micro.client.domain.DetailedShow;
 import se.omegapoint.micro.client.domain.Show;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class ArrayShowRepository implements ShowRepository{
+public class ArrayShowRepository implements ShowRepository {
 
     /**
      * The detailedShowList acts as data storage instead of a database.
@@ -21,22 +20,25 @@ public class ArrayShowRepository implements ShowRepository{
 
     public ArrayShowRepository() {
         this.detailedShowList = new ArrayList<>();
+        DetailedShow show = DetailedShow.newBuilder().id(1)
+                .description("My show!")
+                .genre("horror")
+                .startTime(LocalDateTime.now())
+                .title("Horror Show!")
+                .year(2016)
+                .build();
+        detailedShowList.add(show);
     }
 
-    /**
-     *  TODO: Uppgift 3.
-     */
     @Override
     public List<Show> getShows() {
-        //Tips: kolla på listOfdetailedShowToShowList().
-        throw new NotImplementedException("IMPLEMENT ME, PLEASE!");
+        return listOfdetailedShowToShowList(detailedShowList);
     }
 
     /**
-     *
      * @return List of Detailed Shows
      */
-    public List<DetailedShow> getDetailedShows(){
+    public List<DetailedShow> getDetailedShows() {
         return detailedShowList;
     }
 

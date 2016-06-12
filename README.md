@@ -63,9 +63,16 @@ När man klickar på ett program i listan skall detaljerad information om progra
 
 ## Uppgift 5: Hämta och returnera vidare information om antal tittare
 
-Antalet tittare just nu kommer att visas tillsammans med programansvariga. Det finns en service som tillhandahåller den informationen, *stat-server*. Implementera en endpoint i InfoController.java som anropar *stat-server*. Görs lämpligt vis via en service på samma sätt som ShowController använder ShowService.
+Antalet tittare just nu kommer att visas tillsammans med programansvariga. Det finns en service som tillhandahåller den informationen, *stat-server*. Implementera en endpoint i InfoController.java som anropar *stat-server*. Görs lämpligt vis via en service på samma sätt som ShowController använder
+ShowService.
+1. Använd EurekaClient för att få tag på en url till stat-server (enpoint:en ser ut så här: *viewers?channelId={id}*)
+2. Använd RestTemplate för att göra själva anropet
 
-Tyvärr är *stat-server* lite opålitlig och ofta satt under hög last, vidta åtgärder så att er service inte drabbas om statistikservern går trögt.
+## Uppgift 6: Hantera långsam och opålitlig service
+Tyvärr är *stat-server* lite opålitlig och ofta satt under hög last, vidta åtgärder så att er kanaltjänst inte drabbas om statistiktjänsten går trögt eller fel.
 
-## (BONUS!) Uppgift 5: Skapa endpoint för att lägga till tv-program
-* Skapa en POST endpoint för att lägga till nya Show-objekt
+Netflix  [Hystrix](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html) ger ett bra skydd mot långsamma och opålitliga externa tjänster.
+
+När ni har lagt på Hystrix runt anropet till den extrerna statisktjänsten så är det dags att slå på Hystrix Dashboarden (@EnableHystrixDashboard i ChannelApplication)
+
+Surfa till http://localhost:8080/hystrix ange *http://localhost:8080/hystrix.stream* som som stream i det översta input-fältet, de nedre kan ni skippa. 

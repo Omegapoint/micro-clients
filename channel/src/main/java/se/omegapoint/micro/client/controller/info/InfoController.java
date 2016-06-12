@@ -38,4 +38,17 @@ public class InfoController {
         return this.channelInfo;
     }
 
+    /**
+     * Endpoint for returning viewer statistics.
+     *
+     * @return Integer the number of current viewers
+     *
+     * TODO: Uppgift 5 - Returnera information om antalet tittar just nu.
+     */
+    @RequestMapping(value = "/viewers", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer currentViewers(){
+        return 1337;
+    }
+
+
 }

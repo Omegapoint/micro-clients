@@ -5,9 +5,11 @@
 git clone https://github.com/Omegapoint/micro-clients.git
 git checkout umejug
 ```
+Byt till rätt directory
 ```sh
-cd micro-clients
+cd micro-clients/channel
 ```
+Bygg och starta tjänsten
 ```sh
 mvn spring-boot:run -Dserver.port=8080
 ```
@@ -75,4 +77,4 @@ Netflix  [Hystrix](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netf
 
 När ni har lagt på Hystrix runt anropet till den extrerna statisktjänsten så är det dags att slå på Hystrix Dashboarden (@EnableHystrixDashboard i ChannelApplication)
 
-Surfa till http://localhost:8080/hystrix ange *http://localhost:8080/hystrix.stream* som som stream i det översta input-fältet, de nedre kan ni skippa. 
+Surfa till http://localhost:8080/hystrix ange *http://localhost:8080/hystrix.stream* som som stream i det översta input-fältet, de nedre kan ni skippa.

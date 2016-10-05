@@ -2,9 +2,7 @@ package se.omegapoint.micro.client.domain;
 
 import java.time.LocalDateTime;
 
-/**
- * Created by PNTSCOMP on 2016-03-21.
- */
+
 public class DetailedShow {
 
     public final int id;
@@ -27,7 +25,7 @@ public class DetailedShow {
         year = builder.year;
     }
 
-    public static Builder newBuilder() {
+    public static Builder detailedShow() {
         return new Builder();
     }
 

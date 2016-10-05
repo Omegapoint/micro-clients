@@ -16,7 +16,7 @@ public class ShowDTO {
         startTime = builder.startTime;
     }
 
-    public static Builder newBuilder() {
+    public static Builder showDTO() {
         return new Builder();
     }
 

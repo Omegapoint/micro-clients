@@ -22,7 +22,7 @@ public class DetailedShowDTO {
         genre = builder.genre;
     }
 
-    public static Builder newBuilder() {
+    public static Builder detailedShowDTO() {
         return new Builder();
     }
 

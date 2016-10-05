@@ -16,7 +16,7 @@ public class GetDetailedShowResponse {
     }
 
     public static GetDetailedShowResponse from(DetailedShow detailedShow){
-        DetailedShowDTO detailedShowDTO = DetailedShowDTO.newBuilder()
+        DetailedShowDTO detailedShowDTO = DetailedShowDTO.detailedShowDTO()
                 .id(detailedShow.id)
                 .description(detailedShow.description)
                 .genre(detailedShow.genre)

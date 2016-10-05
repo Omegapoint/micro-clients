@@ -20,7 +20,7 @@ public class GetShowsResponse {
 
     public static GetShowsResponse from(List<Show> shows) {
         List<ShowDTO> showDTOs = shows.stream().map(show ->
-                ShowDTO.newBuilder()
+                ShowDTO.showDTO()
                 .id(show.id)
                 .title(show.title)
                 .startTime(show.startTime.format(DATE_FORMATTER))

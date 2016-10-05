@@ -12,20 +12,20 @@ public class GetShowsResponse {
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
 
     @JsonProperty("shows")
-    public final List<ShowApi> showApiList;
+    public final List<ShowDTO> showDTOList;
 
-    public GetShowsResponse(List<ShowApi> showApiList) {
-        this.showApiList = showApiList;
+    public GetShowsResponse(List<ShowDTO> showDTOList) {
+        this.showDTOList = showDTOList;
     }
 
     public static GetShowsResponse from(List<Show> shows) {
-        List<ShowApi> showApis = shows.stream().map(show ->
-                ShowApi.newBuilder()
+        List<ShowDTO> showDTOs = shows.stream().map(show ->
+                ShowDTO.newBuilder()
                 .id(show.id)
                 .title(show.title)
                 .startTime(show.startTime.format(DATE_FORMATTER))
                 .build()).collect(Collectors.toList());
-        return new GetShowsResponse(showApis);
+        return new GetShowsResponse(showDTOs);
     }
 
 }

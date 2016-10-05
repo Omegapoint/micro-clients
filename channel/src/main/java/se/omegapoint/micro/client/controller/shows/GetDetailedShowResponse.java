@@ -9,14 +9,14 @@ public class GetDetailedShowResponse {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
     @JsonProperty("show")
-    public final DetailedShowApi detailedShow;
+    public final DetailedShowDTO detailedShow;
 
-    public GetDetailedShowResponse(DetailedShowApi detailedShow) {
+    public GetDetailedShowResponse(DetailedShowDTO detailedShow) {
         this.detailedShow = detailedShow;
     }
 
     public static GetDetailedShowResponse from(DetailedShow detailedShow){
-        DetailedShowApi detailedShowApi = DetailedShowApi.newBuilder()
+        DetailedShowDTO detailedShowDTO = DetailedShowDTO.newBuilder()
                 .id(detailedShow.id)
                 .description(detailedShow.description)
                 .genre(detailedShow.genre)
@@ -24,7 +24,7 @@ public class GetDetailedShowResponse {
                 .year(detailedShow.year)
                 .startTime(detailedShow.startTime.format(DATE_FORMATTER))
                 .build();
-        return new GetDetailedShowResponse(detailedShowApi);
+        return new GetDetailedShowResponse(detailedShowDTO);
     }
 
 }

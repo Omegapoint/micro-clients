@@ -1,16 +1,16 @@
 package se.omegapoint.micro.client.controller.shows;
 
 /**
- * ShowApi is used for not exposing the internal Show object to users (clients).
+ * ShowDTO is used for not exposing the internal Show object to users (clients).
  *
  */
-public class ShowApi {
+public class ShowDTO {
 
     public final int id;
     public final String title;
     public final String startTime;
 
-    private ShowApi(Builder builder) {
+    private ShowDTO(Builder builder) {
         id = builder.id;
         title = builder.title;
         startTime = builder.startTime;
@@ -44,8 +44,8 @@ public class ShowApi {
             return this;
         }
 
-        public ShowApi build() {
-            return new ShowApi(this);
+        public ShowDTO build() {
+            return new ShowDTO(this);
         }
     }
 }

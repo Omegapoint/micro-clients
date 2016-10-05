@@ -1,10 +1,10 @@
 package se.omegapoint.micro.client.controller.shows;
 
 /**
- * DetailedShowApi is used for not exposing the internal DetailedShow object to users (clients).
+ * DetailedShowDTO is used for not exposing the internal DetailedShow object to users (clients).
  *
  */
-public class DetailedShowApi {
+public class DetailedShowDTO {
 
     public final int id;
     public final int year;
@@ -13,7 +13,7 @@ public class DetailedShowApi {
     public final String description;
     public final String genre;
 
-    private DetailedShowApi(Builder builder) {
+    private DetailedShowDTO(Builder builder) {
         id = builder.id;
         year = builder.year;
         title = builder.title;
@@ -68,8 +68,8 @@ public class DetailedShowApi {
             return this;
         }
 
-        public DetailedShowApi build() {
-            return new DetailedShowApi(this);
+        public DetailedShowDTO build() {
+            return new DetailedShowDTO(this);
         }
     }
 }

@@ -3,8 +3,8 @@ package se.omegapoint.micro.client.service;
 import org.apache.commons.lang.NotImplementedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import se.omegapoint.micro.client.domain.DetailedShow;
-import se.omegapoint.micro.client.domain.Show;
+import se.omegapoint.micro.client.domain.show.DetailedShow;
+import se.omegapoint.micro.client.domain.show.Show;
 import se.omegapoint.micro.client.repository.ShowRepository;
 
 import java.util.List;

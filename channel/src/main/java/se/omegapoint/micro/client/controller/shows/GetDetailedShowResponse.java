@@ -1,7 +1,7 @@
 package se.omegapoint.micro.client.controller.shows;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import se.omegapoint.micro.client.domain.DetailedShow;
+import se.omegapoint.micro.client.domain.show.DetailedShow;
 
 import java.time.format.DateTimeFormatter;
 
@@ -17,11 +17,11 @@ public class GetDetailedShowResponse {
 
     public static GetDetailedShowResponse from(DetailedShow detailedShow){
         DetailedShowDTO detailedShowDTO = DetailedShowDTO.detailedShowDTO()
-                .id(detailedShow.id)
-                .description(detailedShow.description)
-                .genre(detailedShow.genre)
-                .title(detailedShow.title)
-                .year(detailedShow.year)
+                .id(detailedShow.id.value)
+                .description(detailedShow.description.value)
+                .genre(detailedShow.genre.value)
+                .title(detailedShow.title.value)
+                .year(detailedShow.year.value)
                 .startTime(detailedShow.startTime.format(DATE_FORMATTER))
                 .build();
         return new GetDetailedShowResponse(detailedShowDTO);

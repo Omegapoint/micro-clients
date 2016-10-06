@@ -1,7 +1,7 @@
 package se.omegapoint.micro.client.controller.shows;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import se.omegapoint.micro.client.domain.Show;
+import se.omegapoint.micro.client.domain.show.Show;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -21,8 +21,8 @@ public class GetShowsResponse {
     public static GetShowsResponse from(List<Show> shows) {
         List<ShowDTO> showDTOs = shows.stream().map(show ->
                 ShowDTO.showDTO()
-                .id(show.id)
-                .title(show.title)
+                .id(show.id.value)
+                .title(show.title.value)
                 .startTime(show.startTime.format(DATE_FORMATTER))
                 .build()).collect(Collectors.toList());
         return new GetShowsResponse(showDTOs);

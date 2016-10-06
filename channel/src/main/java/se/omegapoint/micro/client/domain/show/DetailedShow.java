@@ -1,21 +1,17 @@
-package se.omegapoint.micro.client.domain;
+package se.omegapoint.micro.client.domain.show;
 
 import java.time.LocalDateTime;
 
 
 public class DetailedShow {
 
-    public final int id;
-    public final String title;
+    public final Id id;
+    public final Title title;
     public final LocalDateTime startTime;
-    public final String description;
-    public final String genre;
-    public final int year;
+    public final Description description;
+    public final Genre genre;
+    public final Year year;
 
-
-    /**
-     * Builder Pattern
-     */
     private DetailedShow(Builder builder) {
         id = builder.id;
         title = builder.title;
@@ -30,42 +26,42 @@ public class DetailedShow {
     }
 
     public static final class Builder {
-        private int id;
-        private String title;
+        private Id id;
+        private Title title;
         private LocalDateTime startTime;
-        private String description;
-        private String genre;
-        private int year;
+        private Description description;
+        private Genre genre;
+        private Year year;
 
         private Builder() {
         }
 
-        public Builder id(int val) {
+        public Builder withId(Id val) {
             id = val;
             return this;
         }
 
-        public Builder title(String val) {
+        public Builder withTitle(Title val) {
             title = val;
             return this;
         }
 
-        public Builder startTime(LocalDateTime val) {
+        public Builder withStartTime(LocalDateTime val) {
             startTime = val;
             return this;
         }
 
-        public Builder description(String val) {
+        public Builder withDescription(Description val) {
             description = val;
             return this;
         }
 
-        public Builder genre(String val) {
+        public Builder withGenre(Genre val) {
             genre = val;
             return this;
         }
 
-        public Builder year(int val) {
+        public Builder withYear(Year val) {
             year = val;
             return this;
         }
@@ -75,8 +71,5 @@ public class DetailedShow {
         }
     }
 
-    /**
-     * Builder Pattern
-     */
 
 }

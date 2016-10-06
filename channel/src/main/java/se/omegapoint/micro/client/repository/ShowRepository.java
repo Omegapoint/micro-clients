@@ -1,7 +1,7 @@
 package se.omegapoint.micro.client.repository;
 
-import se.omegapoint.micro.client.domain.DetailedShow;
-import se.omegapoint.micro.client.domain.Show;
+import se.omegapoint.micro.client.domain.show.DetailedShow;
+import se.omegapoint.micro.client.domain.show.Show;
 
 import java.util.List;
 

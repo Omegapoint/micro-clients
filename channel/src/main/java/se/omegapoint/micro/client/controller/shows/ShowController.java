@@ -5,6 +5,9 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 import se.omegapoint.micro.client.domain.show.DetailedShow;
 import se.omegapoint.micro.client.domain.show.Show;
 import se.omegapoint.micro.client.service.ShowService;
@@ -13,6 +16,9 @@ import java.util.List;
 
 @RestController
 public class ShowController {
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Autowired
     private ShowService showService;
@@ -40,4 +46,8 @@ public class ShowController {
         return GetDetailedShowResponse.from(detailedShow);
     }
 
+    @RequestMapping(value = "/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public AddResponseDTO addShow(final @RequestBody NewShowRequest newShowRequest) {
+        return new AddResponseDTO(false, "Add not implemented!");
+    }
 }

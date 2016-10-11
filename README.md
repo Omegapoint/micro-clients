@@ -39,7 +39,7 @@ För att din mikrotjänst ska kunna upptäckas av servern måste den registrera 
 
 ## Uppgift 3: Returnera dina tv-program
 
-Nu är din mikrotjänst registrerad och redo att börja returnera data. Den här uppgiften går ut på att ändra koden till att returnera information om de tv-program som sänds på kanalen. Genom att öppna http://localhost8080/shows i webläsaren ser ni vilka program som returneras (Obs, innan ni gjort klart uppgiften returneras ett error-meddelande). 
+Nu är din mikrotjänst registrerad och redo att börja returnera data. Den här uppgiften går ut på att ändra koden till att returnera information om de tv-program som sänds på kanalen. Genom att öppna http://localhost:8080/shows i webläsaren ser ni vilka program som returneras (Obs, innan ni gjort klart uppgiften returneras ett error-meddelande). 
 
 * Börja med att kolla i ShowController.java. Försök hitta vilket Repository som används för att hämta information om tv-program.
 * När du hittat rätt klass (obs, det finns hjälpkommentarer i koden) lägger du till några tv-program och returnerar dessa. T.ex i en passande ArrayList (detailedShowList). 

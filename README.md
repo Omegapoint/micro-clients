@@ -58,7 +58,7 @@ När man klickar på ett program i listan skall detaljerad information om progra
 * Testa genom att klicka på ett program. 
 
 ## Uppgift 5: Skapa endpoint för att lägga till tv-program
-* Hitta en POST endpoint för att lägga till nya Show-objekt
+* Hitta en POST endpoint för att lägga till nya Show-objekt. Denna finns redan!
 * Gå mot microtjänsten "user", som har endpoint access. Det är en GET endpoint, ni kan testa själva mot
   http://192.168.0.100:9423/access?id=daniel
   NOTERA ATT NI INTE (!) SKA GÅ MOT IP ADDRESSEN I ER KOD!

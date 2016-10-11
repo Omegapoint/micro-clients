@@ -64,3 +64,5 @@ När man klickar på ett program i listan skall detaljerad information om progra
   Den enda godkända användaren är editor.
   
   För att lägga till program via frontend, gå till LÄGG TILL PROGRAM fliken
+
+  Psst.. i javakoden kan AccessResponse vara fräääsch

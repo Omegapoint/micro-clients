@@ -19,7 +19,7 @@ Channel info används för att returnera information kanalen. Uppgiften går hel
 
 * Lägg till gruppdeltagarnas namn i channelInfo. 
  (Tips: kolla i InfoController.java)
-* Ändra Kanalnamnet (både i InfoController.java och i application.yml)
+* Ändra Kanalnamnet (tips: InfoController.java)
 * Starta om!
 
 -> Öppna http://localhost:8080/channelInfo i webläsaren
@@ -56,5 +56,11 @@ När man klickar på ett program i listan skall detaljerad information om progra
 * Starta om!
 * Testa genom att klicka på ett program. 
 
-## (BONUS!) Uppgift 5: Skapa endpoint för att lägga till tv-program
-* Skapa en POST endpoint för att lägga till nya Show-objekt
+## Uppgift 5: Skapa endpoint för att lägga till tv-program
+* Hitta en POST endpoint för att lägga till nya Show-objekt
+* Gå mot microtjänsten "user", som har endpoint access. Det är en GET endpoint, ni kan testa själva mot
+  http://192.168.0.100:9423/access?id=daniel
+  NOTERA ATT NI INTE (!) SKA GÅ MOT IP ADDRESSEN I ER KOD!
+  Den enda godkända användaren är editor.
+  
+  För att lägga till program via frontend, gå till LÄGG TILL PROGRAM fliken
